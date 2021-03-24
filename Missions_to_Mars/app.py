@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
-import scrape
+import scrape_mars
 
 # Create an instance of Flask
 app = Flask(__name__)
@@ -17,7 +17,7 @@ def home():
     mars_data = mongo.db.collection.find_one()
 
     # Return template and data
-    return render_template("index.html", mars=mars_data)
+    return render_template("index.html",mars=mars_data)
 
 
 # Route that will trigger the scrape function
