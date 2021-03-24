@@ -40,7 +40,7 @@ url = 'https://mars.nasa.gov/news'
 response = requests.get(url)
 # Create BeautifulSoup object; parse with 'html.parser'
 soup = BeautifulSoup(response.text, 'html.parser')
-print(soup.prettify())
+soup.prettify()
 
 
 # In[5]:
@@ -64,9 +64,9 @@ for result in results:
     #date = datetime.split('T')[0]
     
     # print article data
-    print('-----------------')
-    print(news_title)
-    print(news_p)
+    #print('-----------------')
+    #print(news_title)
+    #print(news_p)
 
     # Dictionary to be inserted into MongoDB
     nasa_post = {
@@ -83,8 +83,8 @@ for result in results:
 
 # Display the MongoDB records created above
 articles = db.articles.find()
-for article in articles:
-    print(article)
+#for article in articles:
+#    print(article)
 
 
 # In[9]:
@@ -121,14 +121,14 @@ mars_facts_url = 'https://space-facts.com/mars/'
 
 # Read and create table
 tables = pd.read_html(mars_facts_url)
-tables
+#tables
 
 
 # In[15]:
 
 
 # Check tables type
-type(tables)
+#type(tables)
 
 
 # In[16]:
@@ -136,7 +136,7 @@ type(tables)
 
 # Convert to dataframe
 mars_facts_df = tables[0]
-mars_facts_df.head()
+#mars_facts_df.head()
 
 
 # In[17]:
@@ -144,7 +144,7 @@ mars_facts_df.head()
 
 # Convert dataframe to html string
 mars_facts_html_table = mars_facts_df.to_html()
-mars_facts_html_table
+#mars_facts_html_table
 
 
 # In[18]:
